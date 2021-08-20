@@ -1,0 +1,31 @@
+@import 'styles/shared';
+
+.SettingsMenu {
+  ul {
+    max-width: px(280);
+    margin: 0;
+    padding: 0 px(15);
+    list-style-type: none;
+    li {
+      a {
+        display: flex;
+        @include align-items(center);
+        @include justify-content(space-between);
+        padding: px(5) 0;
+        font-weight: 500;
+        color: $grey-500;
+        cursor: pointer;
+        i {
+          font-size: px(12);
+        }
+        &:hover,
+        &.active {
+          color: $primary;
+        }
+      }
+      &.spacer {
+        height: px(20);
+      }
+    }
+  }
+}

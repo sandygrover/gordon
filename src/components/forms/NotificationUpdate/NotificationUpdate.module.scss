@@ -1,0 +1,42 @@
+@import 'styles/shared';
+
+.form {
+  position: relative;
+  @include make-col-ready;
+  @include make-col(12);
+  padding-top: px(15);
+  font-family: $primary-font;
+  .title {
+    margin-top: px(-42) !important;
+    margin-bottom: px(30);
+    font-family: $heading-font;
+    font-size: px(17);
+    font-weight: 600;
+  }
+  .inline_toggle {
+    display: flex;
+    @include justify-content(space-between);
+    @include align-items(center);
+    label {
+      font-weight: 500 !important;
+    }
+  }
+  .label {
+    padding-left: px(17);
+    font-size: px(12) !important;
+    font-weight: 400 !important;
+    line-height: px(13);
+    color: $grey-400 !important;
+  }
+  .button_submit {
+    display: flex;
+    @include align-items(center);
+    @include justify-content(flex-end);
+    margin: px(35) 0;
+
+    button {
+      min-width: px(140);
+      height: px(46);
+    }
+  }
+}

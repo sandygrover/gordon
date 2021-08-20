@@ -1,0 +1,24 @@
+@import 'styles/shared';
+
+.borderBottom {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  font-family: $primary-font !important;
+  border-top: 0 !important;
+  border-right: 0 !important;
+  border-left: 0 !important;
+  border-radius: 0 !important;
+  input {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    font-family: $primary-font !important;
+    border-top: 0 !important;
+    border-right: 0 !important;
+    border-left: 0 !important;
+    border-radius: 0 !important;
+  }
+}
+.button_fluid {
+  width: 100%;
+  font-family: $primary-font !important;
+}

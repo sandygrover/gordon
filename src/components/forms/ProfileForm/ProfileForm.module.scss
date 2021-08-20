@@ -1,0 +1,65 @@
+@import 'styles/shared';
+
+.ProfileForm {
+  position: relative;
+  @include make-col-ready;
+  @include make-col(12);
+  padding-top: px(15);
+  .hero_wrap {
+    position: relative;
+    padding-bottom: px(110);
+  }
+  .hero {
+    position: relative;
+    height: px(150);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: px(5);
+  }
+
+  .user {
+    position: absolute;
+    bottom: px(-70);
+    left: calc(50% - 40px);
+    text-align: center;
+    .avatar {
+      border: 3px solid $white;
+    }
+    .name {
+      margin-top: px(10);
+      font-family: $heading-font;
+      font-size: px(18);
+      font-weight: 700;
+      line-height: px(16);
+      color: $black;
+      text-align: center;
+    }
+  }
+  .form {
+    position: relative;
+    font-family: $primary-font;
+    .label {
+      padding-left: px(17);
+      font-size: px(12) !important;
+      font-weight: 400 !important;
+      line-height: px(13);
+      color: $grey-400 !important;
+    }
+    input {
+      font-family: $primary-font;
+      font-size: px(16) !important;
+    }
+    .button_submit {
+      display: flex;
+      @include align-items(center);
+      @include justify-content(center);
+      margin: px(35) 0;
+
+      button {
+        min-width: px(220);
+        height: px(46);
+      }
+    }
+  }
+}

@@ -1,0 +1,139 @@
+{
+  "name": "peakaboo",
+  "version": "1.0.0",
+  "description": "Create creative content and earn",
+  "private": true,
+  "scripts": {
+    "dev": "react-scripts start",
+    "build": "react-scripts build",
+    "build:dev": "env-cmd -f .env.development npm run build",
+    "build:production": "env-cmd -f .env.production npm run build",
+    "\n ######################  Automation Tools  ######################": "",
+    "lint-staged": "lint-staged",
+    "linters": "npm-run-all -p js-lint sass-lint adviser-dev ls-lint",
+    "adviser-dev": "adviser --tags dev --verbose",
+    "adviser-ci": "adviser --tags stage --verbose --quiet",
+    "js-lint": "eslint \"./src/**/*.js\" -c ./.eslintrc.json --quiet --ignore-pattern .gitignore --ignore-pattern *.stories.js",
+    "sass-lint": "stylelint \"./src/**/*.scss\"",
+    "ls-lint": "node_modules/.bin/ls-lint",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "echo \"Pre-commit checks...\" && lint-staged",
+      "pre-push": "echo \"Pre-push checks...\" && npm run linters",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "dependencies": {
+    "@jam3/detect": "^1.0.2",
+    "@jam3/react-check-extra-props": "^1.0.1",
+    "@jam3/react-hooks": "^1.0.0",
+    "@material-ui/core": "^4.11.4",
+    "@reduxjs/toolkit": "^1.6.0",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "antd": "^4.16.12",
+    "axios": "^0.21.1",
+    "bootstrap": "^4.6.0",
+    "card-validator": "^8.1.1",
+    "formik": "^2.2.9",
+    "formik-semantic-ui-react": "^2.0.0",
+    "history": "^5.0.0",
+    "i": "^0.3.6",
+    "image-picker-rui": "^0.0.1",
+    "moment": "^2.29.1",
+    "node-sass": "^6.0.0",
+    "react": "^17.0.2",
+    "react-credit-cards": "^0.8.3",
+    "react-device-detect": "^1.17.0",
+    "react-dom": "^17.0.2",
+    "react-dropzone": "^11.3.4",
+    "react-facebook-login": "^4.1.1",
+    "react-feather": "^2.0.9",
+    "react-google-login": "^5.2.2",
+    "react-redux": "^7.2.4",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "4.0.3",
+    "react-share": "^4.4.0",
+    "redux": "^4.1.0",
+    "redux-thunk": "^2.3.0",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.3",
+    "sweetalert2": "^11.1.2",
+    "web-vitals": "^1.0.1",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^12.1.1",
+    "@commitlint/config-conventional": "^12.1.1",
+    "@jam3/stats": "^1.0.1",
+    "@ls-lint/ls-lint": "^1.9.2",
+    "adviser": "^0.7.5",
+    "adviser-plugin-dependencies": "^0.4.2",
+    "adviser-plugin-lighthouse": "^1.0.1",
+    "adviser-plugin-webhint": "^1.0.1",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "8.1.0",
+    "babel-preset-react-app": "^10.0.0",
+    "env-cmd": "^10.1.0",
+    "eslint-config-postcss": "^4.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-react-app": "^6.0.0",
+    "eslint-config-react-jam3": "^1.1.0",
+    "eslint-loader": "^4.0.2",
+    "eslint-plugin-cypress": "^2.11.3",
+    "eslint-plugin-flowtype": "^5.7.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jam3": "^0.2.3",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-react": "^7.23.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^2.2.1",
+    "redux-devtools-extension": "^2.13.9",
+    "sass-lint": "^1.13.1",
+    "shell-quote": "^1.7.2",
+    "stylelint": "^13.13.1",
+    "stylelint-config-jam3": "^0.1.4"
+  },
+  "engines": {
+    "node": "11.15.0",
+    "npm": "6.7.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tufail/peakaboo.git"
+  },
+  "author": "Mohammed Tufail <https://github.com/tufail>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tufail/peakaboo/issues"
+  },
+  "homepage": "https://peakaboo.com",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

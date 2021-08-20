@@ -1,0 +1,244 @@
+@import 'styles/shared';
+
+.TopNav {
+  z-index: 999;
+  padding: px(15) 0;
+  color: $primary;
+  &__active {
+    box-shadow: 0 px(2) px(2) $grey-300;
+  }
+
+  .container {
+    @include make-container;
+    max-width: $fixed-width-container;
+  }
+
+  .wrap {
+    @include make-row;
+    @include align-items(center);
+    @include justify-content(space-between);
+    flex-wrap: nowrap;
+
+    > .hamburger_col {
+      @include make-col-ready;
+      .hamburger {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        justify-content: space-between;
+        width: 24px;
+        height: 18px;
+        cursor: pointer;
+
+        &:hover {
+          .line {
+            width: 100% !important;
+          }
+        }
+        .line {
+          align-self: flex-start;
+          width: 100%;
+          height: 2px;
+          background: $grey-500;
+          border-radius: px(2);
+          @include transition-by(width);
+          &__middle {
+            width: 75%;
+          }
+          &__bottom {
+            width: 50%;
+          }
+        }
+      }
+    }
+    > .menu {
+      @include make-col-ready;
+      @include make-col(12);
+      position: fixed;
+      right: 0;
+      bottom: -2px;
+      left: 0;
+      z-index: 999;
+      padding-top: px(15);
+      padding-bottom: px(15);
+      background-color: $white;
+      box-shadow: 0 -4px 4px $grey-200;
+      @include media-breakpoint-up(sm) {
+        position: relative;
+        @include make-col(5.5);
+        padding-top: 0;
+        padding-bottom: 0;
+        box-shadow: none;
+      }
+
+      > ul {
+        display: flex;
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        @include justify-content(space-between);
+
+        > li {
+          a {
+            display: flex;
+            flex-flow: column;
+            flex-wrap: nowrap;
+            color: $grey-400;
+            text-align: center;
+            cursor: pointer;
+            @include align-items(center);
+            svg {
+              transition: opacity ease-in-out 0.3s;
+              fill: $grey-400;
+            }
+            span {
+              min-width: px(80);
+              margin-bottom: px(-8);
+              font-size: px(12);
+              opacity: 0;
+              transition: opacity ease-in-out 0.3s;
+            }
+            &:hover,
+            &.active {
+              color: $primary;
+
+              svg {
+                fill: $primary !important;
+              }
+
+              span {
+                opacity: 1;
+              }
+            }
+          }
+        }
+      }
+    }
+    > .search {
+      @include make-col-ready;
+      text-align: right;
+      @include media-breakpoint-up(sm) {
+        @include make-col(3.5);
+      }
+      .searchInput {
+        input {
+          background-color: $grey-100;
+        }
+      }
+    }
+  }
+}
+
+.side_menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  flex-flow: column;
+  flex-wrap: nowrap;
+  width: px(260);
+  overflow: auto;
+  background-color: $white;
+  box-shadow: 0 px(2) px(6) $grey-400;
+  transition: transform ease-in-out 0.3s;
+  transform: translateX(-300px);
+  &__active {
+    transform: translateX(0);
+  }
+  .close {
+    position: absolute;
+    top: px(15);
+    right: px(25);
+    width: px(15);
+    height: px(20);
+    cursor: pointer;
+    &:hover {
+      opacity: 1;
+    }
+    &::before,
+    &::after {
+      position: absolute;
+      left: 15px;
+      width: 2px;
+      height: px(20);
+      content: '';
+      background-color: $grey-500;
+    }
+    &::before {
+      transform: rotate(45deg);
+    }
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+  .profile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-top: px(70);
+    text-align: center;
+    .avatar {
+      position: relative;
+      .label {
+        position: absolute;
+        top: 83%;
+        left: calc(50% + 10px);
+        border: 2px solid $white !important;
+      }
+    }
+    .name {
+      margin-top: px(15);
+      font-family: $heading-font;
+      font-size: px(16);
+      font-weight: 700;
+      color: $black;
+    }
+
+    .stats {
+      font-size: px(12);
+      color: $grey-500;
+      span {
+        &:last-child {
+          padding-left: px(15);
+        }
+      }
+    }
+  }
+}
+.profile_menu {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  height: 100%;
+  ul {
+    list-style-type: none;
+    li {
+      display: block;
+      a {
+        display: flex;
+        align-items: center;
+        padding: px(8) !important;
+        color: $black;
+        vertical-align: middle;
+        svg {
+          width: px(16);
+          height: px(16);
+          margin-right: px(15);
+          fill: $black;
+        }
+        &:hover,
+        &.active {
+          color: $primary;
+          svg {
+            fill: $primary;
+          }
+        }
+      }
+      .rotate_180 {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

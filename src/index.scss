@@ -1,0 +1,58 @@
+@import 'styles/shared';
+@import 'styles/common/semantic-conf';
+
+body {
+  margin: 0;
+  font-family: $primary-font;
+  font-size: px(14);
+  font-style: normal;
+  line-height: px(24);
+  color: $default-text-color;
+  text-align: left;
+  background-color: $body-bg;
+
+  @include media-breakpoint-up(xxl) {
+    font-size: px(16);
+    line-height: px(28);
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+img {
+  max-width: 100%;
+}
+
+.ui.mini.modal,
+.ui.mini.modal .header,
+.ui.mini.modal .actions {
+  border-radius: px(15) !important;
+}
+.ui.mini.modal .actions {
+  padding-bottom: px(34) !important;
+  border-top: 0 !important;
+  button {
+    height: px(46);
+  }
+}
+.ui.mini.modal .header {
+  font-family: $primary-font !important;
+}
+.logo-text {
+  font-family: $heading-font !important;
+  font-size: px(46);
+  font-weight: 800;
+  line-height: px(56);
+  color: $black !important;
+}
+.logo_tag {
+  margin-top: px(20);
+  margin-bottom: px(10);
+  font-family: $heading-font !important;
+  font-size: px(24);
+  font-weight: 500;
+  line-height: px(32);
+  color: $black;
+}

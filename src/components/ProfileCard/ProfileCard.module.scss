@@ -1,0 +1,83 @@
+@import 'styles/shared';
+
+.card {
+  position: relative;
+  min-height: px(120);
+  margin: px(15);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 1px solid $grey-300;
+  border-radius: px(10);
+  &::after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    background-color: rgba($black, 0.2);
+    border-radius: px(10);
+  }
+  .menu {
+    position: relative;
+    z-index: 2;
+    text-align: right;
+    i {
+      font-size: px(14) !important;
+      color: $white !important;
+    }
+  }
+  .about {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    @include align-items(center);
+    margin-left: px(24);
+    img {
+      width: px(52) !important;
+      margin-right: px(15) !important;
+      border: 2px solid $white;
+    }
+
+    .user_status {
+      display: flex;
+      flex-direction: column;
+    }
+    strong {
+      font-weight: 500;
+      color: $white;
+    }
+    span {
+      font-size: px(12);
+      line-height: px(12);
+      color: $white;
+    }
+  }
+}
+.type {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  width: auto;
+  padding: px(3) px(13);
+  font-size: px(10);
+  line-height: px(12);
+  color: $white;
+  span {
+    height: px(20);
+    margin: px(-30) px(10) px(10) px(80);
+    padding: px(3) px(13);
+    background-color: rgba($black, 0.6);
+  }
+}
+// @media (max-width: 425px){
+//   .margin-left: -45px !important;
+// }
+
+@media only screen and (max-width: 600px) {
+  .option{
+    position: absolute !important;
+    left: -105px !important;
+  }
+}
