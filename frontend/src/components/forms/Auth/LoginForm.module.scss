@@ -1,0 +1,117 @@
+@import 'styles/shared';
+
+.borderBottom {
+  padding-right: 0 !important;
+  padding-left: 0 !important;
+  font-family: $primary-font !important;
+  border-top: 0 !important;
+  border-right: 0 !important;
+  border-left: 0 !important;
+  border-radius: 0 !important;
+  input {
+    padding-right: 0 !important;
+    padding-left: 0 !important;
+    font-family: $primary-font !important;
+    border-top: 0 !important;
+    border-right: 0 !important;
+    border-left: 0 !important;
+    border-radius: 0 !important;
+  }
+}
+
+.button_fluid {
+  width: 100%;
+  font-family: $primary-font !important;
+}
+
+.LoginForm_button_social__1DWX-{
+  background-color: aqua !important;
+  font-size: 20px;
+}
+.myfacebookbuttonclass{
+  width: 100%;
+    border: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    color: #727373;
+    background: #f8fafa;
+    margin-top: 10px;
+    box-shadow: 0 0 4px 0px;
+
+    img{
+      width: 40px;
+      height: 40px;
+      padding: 8px;
+    }
+
+    h4{
+      text-align: center;
+      padding: 0px 20px;
+      margin: 0px;
+      width: 100%;
+    }
+}
+
+.button_social {
+  // position: relative;
+  width: 100%;
+  margin: px(5) 0 !important;
+  padding-right: px(15);
+  padding-left: px(50);
+  font-family: $primary-font !important;
+  font-weight: 600 !important;
+  background-color: $grey-100 !important;
+  border: 1px solid rgba($grey-300, 0.8) !important;
+
+  div{
+    width: 20%;
+    svg{
+      padding-left: 6px;
+      width: 100%;
+    }
+  }
+
+  h4{
+      text-align: center;
+      padding: 0px 20px;
+      margin: 0px;
+      width: 100%;
+  }
+ 
+ 
+  span{
+    padding-left: 2rem;
+    width: 100%;
+  }
+
+  &:active,
+  &:focus,
+  &:hover {
+    background-color: $white !important;
+  }
+
+  img {
+    position: absolute !important;
+    top: px(16);
+    left: px(18);
+    width: px(24) !important;
+    height: px(24) !important;
+  }
+}
+
+.textLink {
+  margin-top: px(10) !important;
+  cursor: pointer;
+  a {
+    color: $primary;
+  }
+}
+
+.forgotLink {
+  margin-top: px(-5) !important;
+  color: $primary;
+  text-align: right;
+  cursor: pointer;
+}

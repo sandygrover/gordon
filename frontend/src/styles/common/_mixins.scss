@@ -1,0 +1,239 @@
+@function px($px) {
+  @return $px * 0.0625rem;
+}
+
+@mixin font-size($size-value: 1.6) {
+  font-size: $font-size-base-mobile * $size-value;
+  @include media-breakpoint-up(lg) {
+    font-size: $font-size-base * $size-value;
+  }
+}
+
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin transition($value) {
+  transition: $value;
+}
+
+@mixin transition-two($value1, $value2) {
+  transition: $value1, $value2;
+}
+
+@mixin transform-center {
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+@mixin horizontal-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin placeholder($color) {
+  &::placeholder {
+    color: $color;
+  }
+}
+
+@mixin transform($transforms) {
+  transform: $transforms;
+}
+
+@mixin rotate($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+
+@mixin translate($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+@mixin skew($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+@mixin transform-origin($origin) {
+  transform-origin: $origin;
+}
+
+@function map-get-or-key($map, $key) {
+  @if map-has-key($map, $key) or map-has-key($map, -$key) {
+    @if $key != 'auto' and type-of($key) == 'number' and $key < 0 {
+      @return 0 - map-get($map, -$key);
+    } @else {
+      @return map-get($map, $key);
+    }
+  } @else if type-of($key) == 'string' {
+    @return unquote($key);
+  } @else {
+    @return $key;
+  }
+}
+
+@function bsize($key) {
+  @return map-get-or-key($spacers, $key);
+}
+
+@mixin m($space) {
+  margin: bsize($space);
+}
+
+@mixin mt($space) {
+  margin-top: bsize($space);
+}
+
+@mixin mb($space) {
+  margin-bottom: bsize($space);
+}
+
+@mixin ml($space) {
+  margin-left: bsize($space);
+}
+
+@mixin mr($space) {
+  margin-right: bsize($space);
+}
+
+@mixin p($space) {
+  padding: bsize($space);
+}
+
+@mixin pt($space) {
+  padding-top: bsize($space);
+}
+
+@mixin pb($space) {
+  padding-bottom: bsize($space);
+}
+
+@mixin pl($space) {
+  padding-left: bsize($space);
+}
+
+@mixin pr($space) {
+  padding-right: bsize($space);
+}
+
+@mixin mx($space) {
+  @include ml($space);
+  @include mr($space);
+}
+
+@mixin my($space) {
+  @include mt($space);
+  @include mb($space);
+}
+
+@mixin px($space) {
+  @include pl($space);
+  @include pr($space);
+}
+
+@mixin py($space) {
+  @include pt($space);
+  @include pb($space);
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex($fg: 1, $fs: null, $fb: null) {
+  // Set a variable to be used by box-flex properties
+  $fg-boxflex: $fg;
+
+  // Box-Flex only supports a flex-grow value so let's grab the
+  // first item in the list and just return that.
+  @if type-of($fg) == 'list' {
+    $fg-boxflex: nth($fg, 1);
+  }
+
+  -webkit-box-flex: $fg-boxflex;
+  -webkit-flex: $fg $fs $fb;
+  -moz-box-flex: $fg-boxflex;
+  -moz-flex: $fg $fs $fb;
+  flex: $fg $fs $fb;
+}
+
+@mixin flex-wrap($value: nowrap) {
+  // No Webkit Box fallback.
+  -webkit-flex-wrap: $value;
+  @if $value == nowrap {
+    -ms-flex-wrap: none;
+  } @else {
+    -ms-flex-wrap: $value;
+  }
+  flex-wrap: $value;
+}
+
+@mixin order($int: 0) {
+  -webkit-box-ordinal-group: $int + 1;
+  -webkit-order: $int;
+  order: $int;
+}
+
+@mixin flex-grow($int: 0) {
+  -webkit-box-flex: $int;
+  -webkit-flex-grow: $int;
+  -ms-flex-positive: $int;
+  flex-grow: $int;
+}
+
+@mixin flex-shrink($int: 1) {
+  -webkit-flex-shrink: $int;
+  -ms-flex-negative: $int;
+  flex-shrink: $int;
+}
+
+@mixin justify-content($value: flex-start) {
+  @if $value == space-around {
+    -ms-flex-pack: distribute;
+  }
+  -webkit-justify-content: $value;
+  justify-content: $value;
+}
+
+@mixin align-items($value: stretch) {
+  -webkit-align-items: $value;
+  align-items: $value;
+}
+
+@mixin align-self($value: auto) {
+  // No Webkit Box Fallback.
+  -webkit-align-self: $value;
+  @if $value == flex-start {
+    -ms-flex-item-align: start;
+  } @else if $value == flex-end {
+    -ms-flex-item-align: end;
+  } @else {
+    -ms-flex-item-align: $value;
+  }
+  align-self: $value;
+}
+
+@mixin align-content($value: stretch) {
+  // No Webkit Box Fallback.
+  -webkit-align-content: $value;
+  @if $value == flex-start {
+    -ms-flex-line-pack: start;
+  } @else if $value == flex-end {
+    -ms-flex-line-pack: end;
+  } @else {
+    -ms-flex-line-pack: $value;
+  }
+  align-content: $value;
+}
+
+@mixin transition-by($value: opacity) {
+  transition: $value ease-in-out 0.3s;
+}

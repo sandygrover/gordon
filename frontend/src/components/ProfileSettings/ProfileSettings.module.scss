@@ -1,0 +1,36 @@
+@import 'styles/shared';
+
+.container {
+  @include make-container;
+  max-width: $fixed-width-container;
+  .wrapper {
+    @include make-row;
+    .left {
+      @include make-col-ready;
+      @include make-col(12);
+      @include media-breakpoint-up(md) {
+        @include make-col(3);
+      }
+      padding-top: px(35);
+    }
+    .middle {
+      @include make-col-ready;
+      @include make-col(12);
+      @include media-breakpoint-up(md) {
+        @include make-col(5.5);
+      }
+      min-height: calc(100vh - 70px);
+      padding-top: px(35);
+      border-right: 1px solid $grey-300;
+      border-left: 1px solid $grey-300;
+    }
+    .right {
+      @include make-col-ready;
+      @include make-col(12);
+      @include media-breakpoint-up(md) {
+        @include make-col(3.5);
+      }
+      padding-top: px(35);
+    }
+  }
+}

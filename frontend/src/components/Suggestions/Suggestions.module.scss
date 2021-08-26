@@ -1,0 +1,29 @@
+@import 'styles/shared';
+
+.header {
+  display: flex;
+  @include justify-content(space-between);
+  padding-top: px(25);
+  .heading {
+    margin: px(15);
+    font-family: $heading-font;
+    color: $black !important;
+  }
+  .navigation {
+    display: flex;
+    @include align-items(center);
+    span {
+      width: px(32);
+      height: px(32);
+      cursor: pointer;
+      svg {
+        color: $grey-500;
+      }
+      &.inactive {
+        svg {
+          color: $grey-400;
+        }
+      }
+    }
+  }
+}

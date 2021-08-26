@@ -1,0 +1,37 @@
+@import 'styles/shared';
+
+.container {
+  @include make-container;
+  max-width: $fixed-width-container;
+  .wrapper {
+    @include make-row;
+    .left {
+      @include make-col-ready;
+      @include make-col(12);
+      @include media-breakpoint-up(md) {
+        @include make-col(3);
+      }
+    }
+    .wall {
+      @include make-col-ready;
+      @include make-col(12);
+      @include media-breakpoint-up(md) {
+        @include make-col(5.5);
+      }
+      padding-top: px(35);
+    }
+    .right {
+      @include make-col-ready;
+      @include make-col(12);
+      @include media-breakpoint-up(md) {
+        @include make-col(3.5);
+      }
+      padding-bottom: px(125);
+    }
+  }
+}
+@media (max-width: 425px) {
+.menu.transition.visible {
+  margin-left: -90px !important;
+}
+}

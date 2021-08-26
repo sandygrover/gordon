@@ -1,0 +1,74 @@
+@import 'styles/shared';
+
+.modal {
+  min-height: px(300);
+  > i {
+    top: 10px !important;
+    right: 10px !important;
+    color: $grey-500 !important;
+  }
+
+  .profile {
+    display: flex;
+    @include align-items(center);
+    @include justify-content(center);
+    margin-bottom: px(25);
+    .about {
+      display: flex;
+      @include align-items(center);
+      flex-direction: column;
+      text-align: center;
+      img {
+        width: px(52) !important;
+      }
+      .user_status {
+        display: flex;
+        flex-direction: column;
+      }
+      strong {
+        font-family: $heading-font;
+        color: $black;
+      }
+      span {
+        font-size: px(14);
+        line-height: px(14);
+        color: $grey-500;
+      }
+    }
+  }
+}
+
+.form {
+  .textarea {
+    background-color: rgba($black, 0.03) !important;
+  }
+  .input {
+    input {
+      background-color: rgba($black, 0.03) !important;
+    }
+  }
+  .char_length {
+    margin-top: px(5);
+    font-size: px(14);
+    text-align: right;
+  }
+  .button_group {
+    display: flex;
+    @include align-items(center);
+    @include justify-content(flex-end);
+    margin-top: px(35);
+    margin-bottom: px(-25);
+  }
+}
+.btn_white {
+  min-width: px(80);
+  cursor: pointer;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+.btn_primary {
+  font-family: $primary-font !important;
+  color: $primary !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
