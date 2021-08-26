@@ -1,0 +1,69 @@
+@import 'styles/shared';
+
+.container {
+  @include make-container;
+  max-width: $fixed-width-container;
+  .wrapper {
+    @include make-row;
+    .left {
+      @include make-col-ready;
+      @include make-col(12);
+      @include media-breakpoint-up(md) {
+        @include make-col(3);
+      }
+    }
+    .wall {
+      @include make-col-ready;
+      @include make-col(12);
+      @include media-breakpoint-up(md) {
+        @include make-col(5.5);
+      }
+      padding-top: px(35);
+    }
+
+    .bookmarks_items {
+      display: none;
+      &__active {
+        display: block;
+      }
+      .video_block {
+        margin: px(25) 0;
+      }
+
+      .no_result {
+        display: flex;
+        height: 50vh;
+        @include align-items(center);
+        @include justify-content(center);
+        font-size: px(18);
+      }
+    }
+    .tabs {
+      display: flex;
+      @include justify-content(flex-start);
+      @include align-items(center);
+      padding-bottom: px(35);
+
+      .tab {
+        margin-right: px(50);
+        font-size: px(18);
+        cursor: pointer;
+        @include media-breakpoint-up(lg) {
+          margin-right: px(80);
+        }
+        &__active {
+          color: $primary;
+          border-bottom: 1px solid $primary;
+        }
+      }
+    }
+    .right {
+      @include make-col-ready;
+      @include make-col(12);
+      @include media-breakpoint-up(md) {
+        @include make-col(3.5);
+      }
+      padding-bottom: px(125);
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@import 'styles/shared';
+
+.SettingsMenu {
+  ul {
+    margin: 0;
+    padding: 0 px(15);
+    list-style-type: none;
+    li {
+      a {
+        display: flex;
+        @include align-items(center);
+        @include justify-content(space-between);
+        padding: px(5) 0;
+        font-weight: 500;
+        color: $grey-500;
+        cursor: pointer;
+        i {
+          font-size: px(12);
+        }
+        &:hover,
+        &.active {
+          color: $primary;
+        }
+      }
+      &.spacer {
+        height: px(20);
+      }
+    }
+  }
+}
+
+.container {
+  @include make-container;
+  max-width: $fixed-width-container;
+  .wrapper {
+    @include make-row;
+    .left {
+      @include make-col-ready;
+      @include make-col(12);
+      @include media-breakpoint-up(md) {
+        @include make-col(3);
+      }
+      padding-top: px(35);
+    }
+    .middle {
+      @include make-col-ready;
+      @include make-col(12);
+      @include media-breakpoint-up(md) {
+        @include make-col(5.5);
+      }
+      min-height: calc(100vh - 70px);
+      padding: px(35);
+      border-right: 1px solid $grey-300;
+      border-left: 1px solid $grey-300;
+    }
+    .right {
+      @include make-col-ready;
+      @include make-col(12);
+      @include media-breakpoint-up(md) {
+        @include make-col(3.5);
+      }
+      padding-top: px(35);
+    }
+  }
+}
+.back_btn {
+  cursor: pointer;
+}

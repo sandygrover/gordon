@@ -1,0 +1,64 @@
+@import 'styles/shared';
+
+.AddCard {
+  position: relative;
+  max-width: px(360);
+  h4 {
+    font-family: $primary-font;
+    color: $black;
+  }
+
+  .info_block {
+    position: relative;
+
+    padding-bottom: px(15);
+    strong {
+      font-family: $primary-font;
+      font-weight: 400;
+      color: $black;
+    }
+
+    .label {
+      padding-left: px(17);
+      font-size: px(12) !important;
+      font-weight: 400 !important;
+      line-height: px(13);
+      color: $grey-400 !important;
+    }
+  }
+  .input {
+    input {
+      font-family: $primary-font !important;
+      background-color: rgba($black, 0.03) !important;
+    }
+  }
+  input {
+    font-family: $primary-font !important;
+    background-color: rgba($black, 0.03) !important;
+  }
+
+  button {
+    font-family: $primary-font !important;
+    font-weight: 500 !important;
+  }
+
+  .image_picker {
+    position: relative;
+    display: flex;
+    @include align-items(center);
+    @include justify-content(center);
+    min-height: px(100);
+    margin-bottom: px(35);
+    font-size: px(24);
+    cursor: pointer;
+    border: 1px solid $grey-300;
+    border-radius: px(10);
+    span {
+      position: absolute;
+      right: 0;
+      bottom: px(-25);
+      font-size: px(12);
+      color: $primary;
+    }
+  }
+}

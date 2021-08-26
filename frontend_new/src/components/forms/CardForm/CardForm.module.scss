@@ -1,0 +1,62 @@
+@import 'styles/shared';
+
+.AddCard {
+  position: relative;
+  max-width: px(360);
+  h4 {
+    font-family: $primary-font;
+    color: $black;
+  }
+
+  .info_block {
+    position: relative;
+
+    margin-top: px(34);
+    padding-bottom: px(15);
+    strong {
+      font-family: $primary-font;
+      font-weight: 400;
+      color: $black;
+    }
+  }
+  .input {
+    input {
+      background-color: rgba($black, 0.03) !important;
+    }
+  }
+
+  .inline_fields {
+    display: flex;
+    
+    @include align-items(center);
+    @include justify-content(space-between);
+    .input {
+      max-width: px(80);
+      margin-bottom: px(15);
+      max-width: 4rem;
+      input {
+        text-align: center;
+        background-color: rgba($black, 0.03) !important;
+      }
+    }
+    p {
+      margin-bottom: px(15);
+    }
+  }
+
+  .button_submit {
+    display: flex;
+    @include align-items(center);
+    @include justify-content(center);
+    margin: px(35) 0;
+    button {
+      min-width: px(220);
+      height: px(46);
+
+      span {
+        margin-right: px(10);
+        font-size: px(24);
+      }
+    }
+  }
+}

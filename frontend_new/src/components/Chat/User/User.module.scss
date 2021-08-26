@@ -1,0 +1,30 @@
+@import 'styles/shared';
+
+.user {
+  display: flex;
+  padding: px(10) 0;
+  .avatar {
+    text-align: left;
+    .image {
+      width: px(45) !important;
+      height: px(45) !important;
+    }
+  }
+
+  .profile {
+    display: flex;
+    @include align-items(center);
+    line-height: px(18);
+    text-align: left;
+    padding-top: px(4);
+    .name {
+      font-weight: 500;
+      color: $black;
+    }
+    .latest_message {
+      display: block;
+      font-size: px(12);
+      color: $grey-500;
+    }
+  }
+}
